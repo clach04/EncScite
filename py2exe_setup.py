@@ -44,7 +44,7 @@ icon_file = os.path.join("..", "tombo.ico")
 
 hiddenimports = []
 hiddenimports = ['Crypto', 'Crypto.Cipher', 'Crypto.Cipher._raw_ecb', 'puren_tonbo']
-hiddenimports = ['Crypto', 'puren_tonbo']
+hiddenimports = ['Crypto', 'Crypto.Cipher', 'openssl_enc_compat', 'puren_tonbo']
 hidden_excludes = []  # FIXME tkinter
 hidden_excludes = ['tcl', '_tkinter', 'tkinter', 'Tkinter', ]  # FIXME tkinter
 #hidden_excludes = ['_tkinter', 'tkinter', 'Tkinter', 'chi_io', 'openssl_enc_compat', 'puren_tonbo.vimdecrypt']  # DEBUG for Crypto.Cipher._raw_ecb.pyd
@@ -61,7 +61,8 @@ options = {
                 'excludes': hidden_excludes,
                 'dll_excludes': dll_excludes,
                 "compressed": 1,
-                "optimize": 1,  ## 1 and NOT 2 because I use the __doc__ string as the usage string (e.g. for ptig). 2 optimises out the doc strings
+                #"optimize": 1,  ## 1 and NOT 2 because I use the __doc__ string as the usage string (e.g. for ptig). 2 optimises out the doc strings
+                "optimize": 0,  ## 1 and NOT 2 because I use the __doc__ string as the usage string (e.g. for ptig). 2 optimises out the doc strings
               }
        }
 
@@ -73,11 +74,6 @@ cmdexe_info = dict(
     dest_base = exe_dest_dir + '/' + tmp_program_name)  # FIXME os.path.join()
     #dest_base = exe_dest_dir + '/' + tmp_program_name)
 
-ptig_program = 'ptig'
-ptig_info = dict(
-    script = os.path.join('puren_tonbo', 'tools', ptig_program + '.py'),
-    icon_resources = [(1, icon_file)],
-    dest_base = os.path.join(exe_dest_dir, ptig_program))
 
 console_exes = []
 for console_name in [
@@ -92,6 +88,16 @@ for console_name in [
         icon_resources = [(1, icon_file)],
         dest_base = os.path.join(exe_dest_dir, console_name))
     console_exes.append(temp_exe_info)
+"""
+# DEBUG
+ptig_program = 'testimport_cli'
+ptig_info = dict(
+    #script = os.path.join('puren_tonbo', 'tools', ptig_program + '.py'),
+    script = ptig_program + '.py',
+    icon_resources = [(1, icon_file)],
+    dest_base = os.path.join(exe_dest_dir, ptig_program))
+console_exes.append(ptig_info)
+"""
 
 setup(
     # The lib directory contains everything except the executables and the python dll.
