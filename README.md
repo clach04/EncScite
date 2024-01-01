@@ -47,6 +47,11 @@ Assuming in `puren_tonbo` directory from previous steps.
     copy ..\sc1.exe dist\prog
 
 
+post Build test
+
+dist\prog\ptcipher.exe --list-formats
+dist\prog\ptcipher.exe --password-prompt=gui puren_tonbo\tests\data\aesop_win.openssl_aes256cbc_pbkdf2_10k
+
 
   * TODO scite config
   * TODO scite lua
