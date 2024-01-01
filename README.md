@@ -24,6 +24,8 @@ Get required pieces
     python -m pip install -r requirements.txt
     python -m pip install -r requirements_optional.txt
     python -m pip install -e .
+    # HACK - workaround py2exe pywin32 hook problem https://github.com/clach04/EncScite/issues/3
+    delete virtualenv\\Lib\site-packages\pythonwin\pywin\Demo
 
     # FIXME
     # https://github.com/clach04/EncScite/issues/2
