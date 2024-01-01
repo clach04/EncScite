@@ -48,6 +48,7 @@ hiddenimports = ['Crypto', 'Crypto.Cipher', 'openssl_enc_compat', 'pywin', 'pywi
 hiddenimports = ['Crypto', 'Crypto.Cipher', 'openssl_enc_compat', 'EasyDialogs', 'puren_tonbo']
 hidden_excludes = []  # FIXME tkinter
 hidden_excludes = ['tcl', '_tkinter', 'tkinter', 'Tkinter', 'pywin.Demos']  # FIXME tkinter - FIXME py2exe\mf.py", line 719, in import_hook  "pywin.Demos" delete virtualenv\\Lib\site-packages\pythonwin\pywin\Demo see readme
+hidden_excludes = ['pywin.Demos']  # FIXME tkinter - FIXME py2exe\mf.py", line 719, in import_hook  "pywin.Demos" delete virtualenv\\Lib\site-packages\pythonwin\pywin\Demo see readme
 #hidden_excludes = ['_tkinter', 'tkinter', 'Tkinter', 'chi_io', 'openssl_enc_compat', 'puren_tonbo.vimdecrypt']  # DEBUG for Crypto.Cipher._raw_ecb.pyd
 dll_excludes = ['api-ms-win-crt-runtime-l1-1-0.dll', 'api-ms-win-crt-heap-l1-1-0.dll', 'api-ms-win-crt-stdio-l1-1-0.dll', ]  # see code that auto-handles msvcr90.dll that is builtin to py2exe
 cmc_program_name="puren_tonbo"
@@ -82,7 +83,7 @@ for console_name in [
                         'ptig',
                         'ptconfig',
                         'ptgrep',
-                        #'pttkview',
+                        'pttkview',
                     ]:
     temp_exe_info = dict(
         script = os.path.join('puren_tonbo', 'tools', console_name + '.py'),

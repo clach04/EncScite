@@ -16,6 +16,12 @@ also does not work.
 
 BUT can extract contents of `PLATLIB` dir (inside archive, use 7z to view/extract) into `site-packages`.
 
+With virtualenv, may need to manuall set tcl and tk lib paths, e.g.:
+
+    set TCL_LIBRARY=C:\Pythons\PortablePython-2.7.17\App\Python\tcl\tcl8.5
+    set TK_LIBRARY=C:\Pythons\PortablePython-2.7.17\App\Python\tcl\tk8.5
+
+This avoids error, `_tkinter.TclError: Can't find a usable init.tcl in the following directories:`.
 
 Get required pieces
 
@@ -58,7 +64,7 @@ post Build test
     dist\prog\ptcipher.exe --password password --decrypt puren_tonbo\tests\data\aesop_win.openssl_aes256cbc_pbkdf2_10k
     dist\prog\ptcipher.exe --password-prompt=gui puren_tonbo\tests\data\aesop_win.openssl_aes256cbc_pbkdf2_10k
 
-Should have ~11-12Mb dist directory.
+Should have ~11-12Mb dist directory without Tkinter, with tk/tcl will be ~18Mb dist directory.
 **May** need to copy mfc and msvcrt 90 dlls from virtualenv AND also the base Python path the virtual env is based on.
 
 
