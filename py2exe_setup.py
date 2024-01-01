@@ -43,18 +43,21 @@ Suggested setup.py parameters:
 icon_file = os.path.join("..", "tombo.ico")
 
 hiddenimports = []
-hiddenimports = ['Crypto', 'Crypto.Cipher', 'Crypto.Cipher._raw_ecb', ]
+hiddenimports = ['Crypto', 'Crypto.Cipher', 'Crypto.Cipher._raw_ecb', 'puren_tonbo']
+hiddenimports = ['Crypto', 'puren_tonbo']
 hidden_excludes = []  # FIXME tkinter
-hidden_excludes = ['_tkinter', 'tkinter', 'Tkinter', ]  # FIXME tkinter
-hidden_excludes = ['_tkinter', 'tkinter', 'Tkinter', 'chi_io', 'openssl_enc_compat', 'puren_tonbo.vimdecrypt']  # DEBUG for Crypto.Cipher._raw_ecb.pyd
-dll_excludes = ['api-ms-win-crt-runtime-l1-1-0.dll', ]  # see code that auto-handles msvcr90.dll that is builtin to py2exe
+hidden_excludes = ['tcl', '_tkinter', 'tkinter', 'Tkinter', ]  # FIXME tkinter
+#hidden_excludes = ['_tkinter', 'tkinter', 'Tkinter', 'chi_io', 'openssl_enc_compat', 'puren_tonbo.vimdecrypt']  # DEBUG for Crypto.Cipher._raw_ecb.pyd
+dll_excludes = ['api-ms-win-crt-runtime-l1-1-0.dll', 'api-ms-win-crt-heap-l1-1-0.dll', 'api-ms-win-crt-stdio-l1-1-0.dll', ]  # see code that auto-handles msvcr90.dll that is builtin to py2exe
 cmc_program_name="puren_tonbo"
 exe_dest_dir="prog"
 
 zipfile = r"lib\shardlib"
 
 options = {
-    'py2exe': { 'includes': hiddenimports,
+    'py2exe': {
+                "packages": ["Crypto"],
+                'includes': hiddenimports,
                 'excludes': hidden_excludes,
                 'dll_excludes': dll_excludes,
                 "compressed": 1,
@@ -77,7 +80,13 @@ ptig_info = dict(
     dest_base = os.path.join(exe_dest_dir, ptig_program))
 
 console_exes = []
-for console_name in ['ptcipher', 'ptig', 'ptconfig', 'ptgrep', 'pttkview']:
+for console_name in [
+                        'ptcipher',
+                        'ptig',
+                        'ptconfig',
+                        'ptgrep',
+                        #'pttkview',
+                    ]:
     temp_exe_info = dict(
         script = os.path.join('puren_tonbo', 'tools', console_name + '.py'),
         icon_resources = [(1, icon_file)],

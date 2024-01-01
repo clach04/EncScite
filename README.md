@@ -23,6 +23,12 @@ Get required pieces
     cd puren_tonbo
     python -m pip install -r requirements.txt
     python -m pip install -r requirements_optional.txt
+    python -m pip install -e .
+
+    # FIXME
+    # https://github.com/clach04/EncScite/issues/2
+    pip uninstall pycryptodome
+    echo manually install https://web.archive.org/web/20200427093214/http://www.voidspace.org.uk/python/modules.shtml#pycrypto
 
 ### Sanity check / test
 
