@@ -21,21 +21,21 @@ path %SciTE_HOME%\prog;%PATH%
 
 ::start 
 REM does NOT work
-REM start "%SciTE_HOME%\Sc32_540.exe" %*%
+REM start "%SciTE_HOME%\sc1.exe" %*%
 
-echo start "%SciTE_HOME%\Sc32_540.exe" %*%
+echo start "%SciTE_HOME%\sc1.exe" %*%
 REM fork bomb!
-REM start EncScite "%SciTE_HOME%\Sc32_540.exe" %*%
+REM start EncScite "%SciTE_HOME%\sc1.exe" %*%
 REM Best; spawns and does not wait, can handle multiple files as parameters (and/or regular scite parameters)
-start "MyTitle" "%SciTE_HOME%\Sc32_540.exe" %*%
+start "MyTitle" "%SciTE_HOME%\sc1.exe" %*%
 
 REM Works, waits
-REM "%SciTE_HOME%\Sc32_540.exe" %*%
+REM "%SciTE_HOME%\sc1.exe" %*%
 
 REM works, also waits
-REM CMD /C "%SciTE_HOME%\Sc32_540.exe" %*%
+REM CMD /C "%SciTE_HOME%\sc1.exe" %*%
 
 REM works, does not wait BUT opens a blank CMD window
-REM start CMD /C "%SciTE_HOME%\Sc32_540.exe" %*%
+REM start CMD /C "%SciTE_HOME%\sc1.exe" %*%
 
 endlocal

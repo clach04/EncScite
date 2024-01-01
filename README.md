@@ -75,11 +75,12 @@ Should have ~11-12Mb dist directory without Tkinter, with tk/tcl will be ~18Mb d
 
 ### Packaging
 
+TODO script, batch and/or put into setup.py
 
     REM assuming in EncScite dir
-    copy puren_tonbo\integrations\scite\pt_scite.lua SciTEStartup.lua
+    copy /y puren_tonbo\integrations\scite\pt_scite.lua SciTEStartup.lua
 
     7z a EncScite_release.zip SciTEStartup.lua SciTE.properties encscite.bat sc1.exe
     cd puren_tonbo\dist
-    7z a ..\EncScite_release.zip lib prog
+    7z a ..\..\EncScite_release.zip lib prog
 
