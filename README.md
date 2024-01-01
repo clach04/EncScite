@@ -24,6 +24,9 @@ Get required pieces
     python -m pip install -r requirements.txt
     python -m pip install -r requirements_optional.txt
     python -m pip install -e .
+    python -m pip install git+https://github.com/clach04/easydialogs-windows.git
+    # Manually install easydialogs-windows
+
     # HACK - workaround py2exe pywin32 hook problem https://github.com/clach04/EncScite/issues/3
     delete virtualenv\\Lib\site-packages\pythonwin\pywin\Demo
 
@@ -51,8 +54,12 @@ Assuming in `puren_tonbo` directory from previous steps.
 
 post Build test
 
-dist\prog\ptcipher.exe --list-formats
-dist\prog\ptcipher.exe --password-prompt=gui puren_tonbo\tests\data\aesop_win.openssl_aes256cbc_pbkdf2_10k
+    dist\prog\ptcipher.exe --list-formats
+    dist\prog\ptcipher.exe --password password --decrypt puren_tonbo\tests\data\aesop_win.openssl_aes256cbc_pbkdf2_10k
+    dist\prog\ptcipher.exe --password-prompt=gui puren_tonbo\tests\data\aesop_win.openssl_aes256cbc_pbkdf2_10k
+
+Should have ~11-12Mb dist directory.
+**May** need to copy mfc and msvcrt 90 dlls from virtualenv AND also the base Python path the virtual env is based on.
 
 
   * TODO scite config

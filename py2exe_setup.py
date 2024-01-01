@@ -45,6 +45,7 @@ icon_file = os.path.join("..", "tombo.ico")
 hiddenimports = []
 hiddenimports = ['Crypto', 'Crypto.Cipher', 'Crypto.Cipher._raw_ecb', 'puren_tonbo']
 hiddenimports = ['Crypto', 'Crypto.Cipher', 'openssl_enc_compat', 'pywin', 'pywin.mfc', 'pywin.mfc.dialog', 'pywin.mfc.window', 'EasyDialogs', 'puren_tonbo']
+hiddenimports = ['Crypto', 'Crypto.Cipher', 'openssl_enc_compat', 'EasyDialogs', 'puren_tonbo']
 hidden_excludes = []  # FIXME tkinter
 hidden_excludes = ['tcl', '_tkinter', 'tkinter', 'Tkinter', 'pywin.Demos']  # FIXME tkinter - FIXME py2exe\mf.py", line 719, in import_hook  "pywin.Demos" delete virtualenv\\Lib\site-packages\pythonwin\pywin\Demo see readme
 #hidden_excludes = ['_tkinter', 'tkinter', 'Tkinter', 'chi_io', 'openssl_enc_compat', 'puren_tonbo.vimdecrypt']  # DEBUG for Crypto.Cipher._raw_ecb.pyd
@@ -88,7 +89,7 @@ for console_name in [
         icon_resources = [(1, icon_file)],
         dest_base = os.path.join(exe_dest_dir, console_name))
     console_exes.append(temp_exe_info)
-#"""
+"""
 # DEBUG
 ptig_program = 'testimport_cli'
 ptig_info = dict(
@@ -97,7 +98,7 @@ ptig_info = dict(
     icon_resources = [(1, icon_file)],
     dest_base = os.path.join(exe_dest_dir, ptig_program))
 console_exes.append(ptig_info)
-#"""
+"""
 
 setup(
     # The lib directory contains everything except the executables and the python dll.
