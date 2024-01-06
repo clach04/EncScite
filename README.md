@@ -1,6 +1,8 @@
 # EncScite
 
-SciTE with encryption/decryption support
+SciTE with encryption/decryption support from https://github.com/clach04/puren_tonbo
+
+Uses upstream prebuilt scite sc1.exe with pure tonbo plugin to support AE-2 (zip), OpenSSL AES-256-CBC, andother encryption mechanisms.
 
 WORK IN PROGRESS
 
