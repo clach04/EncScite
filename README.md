@@ -25,6 +25,9 @@ With virtualenv, may need to manuall set tcl and tk lib paths, e.g.:
     set TCL_LIBRARY=C:\Pythons\PortablePython-2.7.17\App\Python\tcl\tcl8.5
     set TK_LIBRARY=C:\Pythons\PortablePython-2.7.17\App\Python\tcl\tk8.5
 
+    set TCL_LIBRARY=C:\pythons\PPython2.7.17_32-bit\App\Python\tcl\tcl8.5
+    set TK_LIBRARY=C:\pythons\PPython2.7.17_32-bit\App\Python\tcl\tk8.5
+
 This avoids error, `_tkinter.TclError: Can't find a usable init.tcl in the following directories:`.
 
 Get required pieces
