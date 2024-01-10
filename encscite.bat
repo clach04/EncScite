@@ -10,6 +10,12 @@ set folder=%_SCRIPT_DRIVE%%_SCRIPT_PATH%
 ::old_cd=%CD%
 REM echo folder %folder%
 
+:: Override scite home dir, avoids mix/matching with a real SciTE config that may exist on a machine
+:: SciTE checks for config files in the following locations in order:
+::   SciTE_HOME
+::   SciTE_USERHOME
+::   USERPROFILE	- Essentially Windows user's home directory
+
 ::set SciTE_HOME=C:\programs\prog
 ::set SciTE_HOME=C:\Users\clach04\OneDrive - Actian Software\programs\encscite\prog
 set SciTE_HOME=%folder%
