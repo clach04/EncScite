@@ -10,7 +10,9 @@ WORK IN PROGRESS
 
 NOTE assumes Python (virtualenv / venv) already setup. Something like:
 
-    call c:\Pythons\pp2717venv\Scripts\activate.bat
+    C:\pythons\PPython2.7.17_32-bit\App\Python\python.exe -m pip  install virtualenv
+    C:\pythons\PPython2.7.17_32-bit\App\Python\python.exe -m virtualenv pyenv2.7.17_32-bit
+    call c:\pythons\pyenv2.7.17_32-bit\Scripts\activate.bat
 
 pip install of py2exe is NOT possible, i.e. `python -m pip install py2exe==0.6.9` fails
 Running exe https://sourceforge.net/projects/py2exe/files/py2exe/0.6.9/py2exe-0.6.9.win32-py2.7.exe/download
